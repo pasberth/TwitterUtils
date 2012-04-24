@@ -7,4 +7,5 @@ Twitter Console Utilities
 
 == Usage
 
-  $ tutils post -m "hello!"
+  $ tutils.rb mkbijection
+  $ tutils.rb mkml
