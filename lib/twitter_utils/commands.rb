@@ -6,5 +6,6 @@ module TwitterUtils
     require 'twitter_utils/commands/post'
     require 'twitter_utils/commands/mkml'
     require 'twitter_utils/commands/mkbijection'
+    require 'twitter_utils/commands/upimg'
   end
 end
