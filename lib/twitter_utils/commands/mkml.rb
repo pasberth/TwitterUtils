@@ -1,8 +1,12 @@
 require 'twitter_utils/commands/base'
+require 'super_short'
 
 module TwitterUtils::Commands
 
 class Mkml < Base
+  
+  include SuperShort::ObjectMethods
+  include SuperShort::Modifiable
   
   def option_parser
     OptionParser.new.tap do |opts|
@@ -21,9 +25,9 @@ class Mkml < Base
     @mlname ||= 'main'
     @mode ||= 'public'
     @desc ||= 'main list auto-created by TwitterUtils. https://github.com/pasberth/TwitterUtils'
-    @force.nil? and @force = false
-    @create.nil? and @create = true
-    @rewrite.nil? and @rewrite = false
+    get_or_set :@force, false
+    get_or_set :@create, true
+    get_or_set :@rewrite, false
 
     if api.lists.lists.map(&:name).include? @bijection_list_name
       if @rewrite
