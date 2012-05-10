@@ -5,8 +5,9 @@ module TwitterUtils::Commands
 
 class Upimg < Base
   
-  def __main__ *argv
-    path = argv.shift
+  parameter 'PATH', 'image path of the new icon.'
+
+  def execute
     if File.exist? path
       api.update_profile_image File.new(path)
       puts "Profile image updated successful."

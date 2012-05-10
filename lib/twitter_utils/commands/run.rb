@@ -3,11 +3,8 @@ require 'myoack'
 
 module TwitterUtils::Commands
 
-class Run < Base
-  
-  def __main__ *argv
-    cmd = argv.shift
-    commands[cmd].main(*argv)
+  class Run < Base
+    subcommand 'upimg', 'update profile icon,', Upimg
+    subcommand 'mkbijection', 'make bijection list.', Mkbijection  
   end
-end
 end
