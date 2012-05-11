@@ -7,5 +7,20 @@ Twitter Console Utilities
 
 == Usage
 
-  $ tutils.rb mkbijection
-  $ tutils.rb mkml
+=== followall コマンド
+
+例:
+
+  $ tutils.rb followall --tags="地獄のucq"
+
+#地獄のucq で Twitter を検索し、 それをつけてつぶやいた人すべてをフォローします。
+フォローする前に一度確認します。
+
+  $ ./bin/tutils.rb followall --tags="地獄のucq"
+  This program will follow 9 users:
+  xxx_yyyy            : 7587 tweets. 221 friends. 371 followers.
+  ab_cdefgh           : 1313 tweets. 190 friends. 172 followers.
+  foo_baaa            : 11863 tweets. 1979 friends. 1795 followers.
+  ... (省略) ...
+  Do you follow them really? [Y/N]
+  y
